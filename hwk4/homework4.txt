@@ -1,1 +1,107 @@
+STEP A
+git config --global user.name "..."
+git config --global user.email "..."
+git config --global core.editor "..." 
 
+git config --list
+credential.helper=osxkeychain
+init.defaultbranch=main
+user.name=Alr236
+user.email=23comp1043@isik.edu.tr
+user.editor=code --wait
+filter.lfs.required=true
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+
+STEP B
+cd Homework4-soft2101
+ls -a
+cd .git
+config		HEAD		index		logs		packed-refs
+description	hooks		info		objects		refs
+
+STEP C
+[Department of Software Engineering](https://www.isikun.edu.tr/akademik/muhendislik-fakultesi/bolumler-ve-programlar/bilgisayar-muhendisligi/programlar/lisans-programi/yazilim-muhendisligi)
+
+STEP D
+touch .gitignore
+nano .gitignore
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+
+STEP E
+done
+
+STEP F
+git log
+1b34ba0 (HEAD -> feature-1) satisfying requirement one
+f1b248c (origin/main, origin/HEAD, main) Create homework4.txt
+
+ls -R
+Main.class	Main.java
+
+Nothing is listed since we did not merge them yet.
+
+STEP G-H-I
+done
+
+STEP J
+git log --oneline
+735bc03 (HEAD -> feature-2) satisfying requirement change two
+1b34ba0 (main, feature-3, feature-1) satisfying requirement one
+f1b248c (origin/main, origin/HEAD) Create homework4.txt
+
+STEP K-L
+done
+
+STEP M
+git diff main feature-1
+diff --git a/hwk4/hmk1/Main.java b/hwk4/hmk1/Main.java
+index 6bd3e0e..dc04ee8 100644
+--- a/hwk4/hmk1/Main.java
++++ b/hwk4/hmk1/Main.java
+@@ -15,9 +15,7 @@ public class Main {
+ 
+         System.out.println("Numbers in between:");
+         for (int i = start + 1; i < end; i++) {
+-           if (i % 2 == 0) {
+-                System.out.print(i + " ");
+-           }
++            System.out.print(i + " ");
+         }
+         System.out.println();
+     }
+
+git diff main feature-2
+diff --git a/hwk4/hmk1/Main.java b/hwk4/hmk1/Main.java
+index 6bd3e0e..57ab66c 100644
+--- a/hwk4/hmk1/Main.java
++++ b/hwk4/hmk1/Main.java
+@@ -15,9 +15,8 @@ public class Main {
+ 
+         System.out.println("Numbers in between:");
+         for (int i = start + 1; i < end; i++) {
+-           if (i % 2 == 0) {
+-                System.out.print(i + " ");
+-           }
++            if (i % 2 != 0) {  // Sadece tek sayılar
++            System.out.print(i + " ");
+         }
+         System.out.println();
+     }
+
+
+git diff main feature-3
+(empty output since they're same
