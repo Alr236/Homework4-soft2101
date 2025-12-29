@@ -15,8 +15,9 @@ public class Main {
 
         System.out.println("Numbers in between:");
         for (int i = start + 1; i < end; i++) {
-            if (i % 2 != 0) {  // Sadece tek sayılar
-            System.out.print(i + " ");
+	    if (i % 2 == 0) {
+                System.out.print(i + " ");
+	    }
         }
         System.out.println();
     }
